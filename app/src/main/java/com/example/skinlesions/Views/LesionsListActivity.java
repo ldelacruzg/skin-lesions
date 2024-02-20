@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -58,7 +59,13 @@ public class LesionsListActivity extends AppCompatActivity {
                 new ListLesionAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(Lesion lesion, int position) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("id", lesion.getId());
 
+                        Intent intent = new Intent(getApplicationContext(), LesionDetailActivity.class);
+                        intent.putExtras(bundle);
+
+                        startActivity(intent);
                     }
                 }
         );

@@ -1,27 +1,27 @@
 package com.example.skinlesions.Models;
 
 public class FAQ {
-    private String question;
-    private String response;
+    private String ask;
+    private String answer;
 
     public FAQ(String question, String response) {
-        this.question = question;
-        this.response = response;
+        this.ask = question;
+        this.answer = response;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getAsk() {
+        return ask;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setAsk(String ask) {
+        this.ask = ask;
     }
 
-    public String getResponse() {
-        return response;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setResponse(String response) {
-        this.response = response;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

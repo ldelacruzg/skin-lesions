@@ -56,6 +56,12 @@ public class ListLesionAdapter extends RecyclerView.Adapter<ListLesionAdapter.Vi
         public void bind(Lesion lesion, OnItemClickListener listener) {
             textViewName.setText(lesion.getName());
             textViewDescription.setText(lesion.getDescription());
+            this.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onItemClick(lesion, getAdapterPosition());
+                }
+            });
         }
     }
 

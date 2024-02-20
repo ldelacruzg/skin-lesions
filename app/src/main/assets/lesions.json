@@ -1,0 +1,90 @@
+{
+  "lesions": [
+    {
+      "name": "Rosácea",
+      "description": "La rosácea es una enfermedad crónica que afecta la piel y algunas veces los ojos. Causa enrojecimiento de la piel y espinillas. La rosácea es más común entre las mujeres y las personas de piel clara. Suele afectar a adultos de edad mediana y avanzada.",
+      "symptoms": {
+        "title": "Enrojecimiento facial persistente",
+        "description": "El enrojecimiento facial es el signo más común de la rosácea. Puede ser leve o severo, y puede afectar toda la cara o solo ciertas áreas"
+      },
+      "diagnosis": "El diagnóstico de la rosácea se basa en la evaluación de los signos y síntomas de la persona. El médico también puede realizar un examen físico para buscar otros signos de rosácea, como telangiectasias u ojos secos.",
+      "treatments": [
+        {
+          "title": "Medicamentos tópicos",
+          "description": "Los medicamentos tópicos, como el ácido azelaico, el metronidazol y la brimonidina, pueden ayudar a reducir el enrojecimiento, las pápulas y las pústulas."
+        },
+        {
+          "title": "Medicamentos orales",
+          "description": "Los medicamentos orales, como la doxiciclina y la minociclina, pueden ayudar a controlar la inflamación."
+        },
+        {
+          "title": "Cirugía",
+          "description": "En casos graves, la cirugía puede ser necesaria para corregir el engrosamiento de la piel (rinofima)"
+        }
+      ],
+      "care": [
+        "Evitar los factores desencadenantes: Los factores desencadenantes de la rosácea pueden variar de persona a persona, pero algunos de los más comunes son el sol, el calor, el estrés, el alcohol y los alimentos picantes.",
+        "Usar protector solar: El protector solar es esencial para proteger la piel del sol, que es uno de los principales desencadenantes de la rosácea.",
+        "Usar productos para el cuidado de la piel suaves: Los productos para el cuidado de la piel demasiado fuertes o irritantes pueden empeorar los síntomas de la rosácea.",
+        "Evitar tocarse la cara: Tocarse la cara puede propagar las bacterias y empeorar los síntomas de la rosácea."
+      ],
+      "faq": [
+        {
+          "ask": "¿La rosácea es contagiosa?",
+          "answer": "No, la rosácea no es contagiosa"
+        },
+        {
+          "ask": "¿La rosácea es curable?",
+          "answer": "No, la rosácea es una afección crónica que no tiene cura. Sin embargo, el tratamiento puede ayudar a controlar los signos y síntomas de la afección"
+        },
+        {
+          "ask": "¿Hay algún remedio casero para la rosácea?",
+          "answer": "Hay algunos remedios caseros que pueden ayudar a aliviar los síntomas de la rosácea, como compresas frías, té de manzanilla y remedios naturales para el acné. Sin embargo, estos remedios no son un sustituto del tratamiento médico.\n"
+        }
+      ]
+    },
+    {
+      "name": "Rosácea 2",
+      "description": "La rosácea es una enfermedad crónica que afecta la piel y algunas veces los ojos. Causa enrojecimiento de la piel y espinillas. La rosácea es más común entre las mujeres y las personas de piel clara. Suele afectar a adultos de edad mediana y avanzada.",
+      "symptoms": {
+        "title": "Enrojecimiento facial persistente",
+        "description": "El enrojecimiento facial es el signo más común de la rosácea. Puede ser leve o severo, y puede afectar toda la cara o solo ciertas áreas"
+      },
+      "diagnosis": "El diagnóstico de la rosácea se basa en la evaluación de los signos y síntomas de la persona. El médico también puede realizar un examen físico para buscar otros signos de rosácea, como telangiectasias u ojos secos.",
+      "treatments": [
+        {
+          "title": "Medicamentos tópicos",
+          "description": "Los medicamentos tópicos, como el ácido azelaico, el metronidazol y la brimonidina, pueden ayudar a reducir el enrojecimiento, las pápulas y las pústulas."
+        },
+        {
+          "title": "Medicamentos orales",
+          "description": "Los medicamentos orales, como la doxiciclina y la minociclina, pueden ayudar a controlar la inflamación."
+        },
+        {
+          "title": "Cirugía",
+          "description": "En casos graves, la cirugía puede ser necesaria para corregir el engrosamiento de la piel (rinofima)"
+        }
+      ],
+      "care": [
+        "Evitar los factores desencadenantes: Los factores desencadenantes de la rosácea pueden variar de persona a persona, pero algunos de los más comunes son el sol, el calor, el estrés, el alcohol y los alimentos picantes.",
+        "Usar protector solar: El protector solar es esencial para proteger la piel del sol, que es uno de los principales desencadenantes de la rosácea.",
+        "Usar productos para el cuidado de la piel suaves: Los productos para el cuidado de la piel demasiado fuertes o irritantes pueden empeorar los síntomas de la rosácea.",
+        "Evitar tocarse la cara: Tocarse la cara puede propagar las bacterias y empeorar los síntomas de la rosácea."
+      ],
+      "faq": [
+        {
+          "ask": "¿La rosácea es contagiosa?",
+          "answer": "No, la rosácea no es contagiosa"
+        },
+        {
+          "ask": "¿La rosácea es curable?",
+          "answer": "No, la rosácea es una afección crónica que no tiene cura. Sin embargo, el tratamiento puede ayudar a controlar los signos y síntomas de la afección"
+        },
+        {
+          "ask": "¿Hay algún remedio casero para la rosácea?",
+          "answer": "Hay algunos remedios caseros que pueden ayudar a aliviar los síntomas de la rosácea, como compresas frías, té de manzanilla y remedios naturales para el acné. Sin embargo, estos remedios no son un sustituto del tratamiento médico.\n"
+        }
+      ]
+    }
+  ]
+}

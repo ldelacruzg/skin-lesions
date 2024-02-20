@@ -1,11 +1,17 @@
 package com.example.skinlesions;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
+
+import com.example.skinlesions.Views.LesionsListActivity;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -13,6 +19,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Toolbar
+        Toolbar toolbar = findViewById(R.id.myAppBar);
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+
+        // ActionBar actionBar = getSupportActionBar();
+        // actionBar.setDisplayHomeAsUpEnabled(true);
+
+        // Options
         LinearLayout lesionsOption = findViewById(R.id.lesionsOption);
         LinearLayout recommendOption = findViewById(R.id.recommendOption);
         LinearLayout takePhotoOption = findViewById(R.id.takePhotoOption);
@@ -21,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         lesionsOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Lesions Click", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), LesionsListActivity.class);
+                startActivity(intent);
             }
         });
 

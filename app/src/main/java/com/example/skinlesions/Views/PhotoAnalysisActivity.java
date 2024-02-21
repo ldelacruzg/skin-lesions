@@ -8,41 +8,40 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.skinlesions.Adapters.ListFAQAdapter;
-import com.example.skinlesions.Adapters.ListLesionAdapter;
-import com.example.skinlesions.Adapters.ListSymptomsAdapter;
-import com.example.skinlesions.Models.FAQ;
+import com.example.skinlesions.Adapters.ListCareAdapter;
+import com.example.skinlesions.Adapters.ListTreatmentAdapter;
 import com.example.skinlesions.Models.Lesion;
-import com.example.skinlesions.Models.Symptom;
+import com.example.skinlesions.Models.Treatment;
 import com.example.skinlesions.R;
 import com.example.skinlesions.Services.SkinLesionAPI;
 import com.example.skinlesions.Services.SkinLesionRetrofit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LesionDetailActivity extends AppCompatActivity {
+public class PhotoAnalysisActivity extends AppCompatActivity {
 
-    TextView textViewLesionName, textViewLesionDescription;
     Toolbar toolbar;
+    TextView textViewLesionName, textViewLesionDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesion_detail);
+        setContentView(R.layout.activity_photo_analysis);
 
         // Toolbar
         toolbar = findViewById(R.id.myAppBar);
         toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setTitle("Análisis");
         setSupportActionBar(toolbar);
 
         // AppBar
@@ -53,34 +52,33 @@ public class LesionDetailActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         int id = bundle.getInt("id");
 
-        // Init values
-        this.textViewLesionName = findViewById(R.id.textViewLesionName);
-        this.textViewLesionDescription = findViewById(R.id.textViewLesionDescription);
+        textViewLesionName = findViewById(R.id.textViewLesionName);
+        textViewLesionDescription = findViewById(R.id.textViewLesionDescription);
 
         getLesionById(id);
     }
 
+    private void setCareList(List<String> cares) {
+        RecyclerView recyclerViewCareList = findViewById(R.id.recyclerViewCareList);
+        RecyclerView.LayoutManager layoutManagerCareList = new LinearLayoutManager(this);
+        RecyclerView.Adapter adapterCareList = new ListCareAdapter(cares, R.layout.list_item_symptoms);
+        recyclerViewCareList.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewCareList.setLayoutManager(layoutManagerCareList);
+        recyclerViewCareList.setAdapter(adapterCareList);
+    }
+
+    private void setTreatmentList(List<Treatment> treatments) {
+        RecyclerView recyclerViewTreatmentList = findViewById(R.id.recyclerViewTreatmentList);
+        RecyclerView.LayoutManager layoutManagerTreatmentList = new LinearLayoutManager(this);
+        RecyclerView.Adapter adapterTreatmentList = new ListTreatmentAdapter(treatments, R.layout.list_item_faq);
+        recyclerViewTreatmentList.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewTreatmentList.setLayoutManager(layoutManagerTreatmentList);
+        recyclerViewTreatmentList.setAdapter(adapterTreatmentList);
+    }
+
     private void setGlobalData(Lesion lesion) {
-        this.toolbar.setTitle(lesion.getName());
-        this.textViewLesionName.setText(lesion.getName());
-        this.textViewLesionDescription.setText(lesion.getDescription());
-    }
-
-    private void setSymtomsList(List<Symptom> symtoms) {
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewSymptomList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        RecyclerView.Adapter adapter = new ListSymptomsAdapter(symtoms,  R.layout.list_item_symptoms);
-
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-    }
-
-    private void setFAQList(List<FAQ> faqList) {
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewFaqList);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new ListFAQAdapter(faqList));
+        textViewLesionName.setText(lesion.getName());
+        textViewLesionDescription.setText(lesion.getDescription());
     }
 
     private void getLesionById(int id) {
@@ -92,8 +90,8 @@ public class LesionDetailActivity extends AppCompatActivity {
             public void onResponse(Call<Lesion> call, Response<Lesion> response) {
                 Lesion lesion = response.body();
                 setGlobalData(lesion);
-                setSymtomsList(lesion.getSymptoms());
-                setFAQList(lesion.getFaq());
+                setTreatmentList(lesion.getTreatments());
+                setCareList(lesion.getCare());
             }
 
             @Override

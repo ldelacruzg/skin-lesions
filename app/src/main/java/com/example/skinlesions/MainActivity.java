@@ -11,7 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.skinlesions.Views.LesionDetailActivity;
 import com.example.skinlesions.Views.LesionsListActivity;
+import com.example.skinlesions.Views.PhotoAnalysisActivity;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -29,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Options
         LinearLayout lesionsOption = findViewById(R.id.lesionsOption);
-        LinearLayout recommendOption = findViewById(R.id.recommendOption);
+        //LinearLayout recommendOption = findViewById(R.id.recommendOption);
         LinearLayout takePhotoOption = findViewById(R.id.takePhotoOption);
+        LinearLayout analizePhoneOption = findViewById(R.id.analizePhoneOption);
         LinearLayout uploadPhotoOption = findViewById(R.id.uploadPhotoOption);
 
         lesionsOption.setOnClickListener(new View.OnClickListener() {
@@ -41,17 +44,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recommendOption.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Recommend Click", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         takePhotoOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Take photo Click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        analizePhoneOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("id", 3); // TODO: Colocar el indice de la lesión
+
+                Intent intent = new Intent(getApplicationContext(), PhotoAnalysisActivity.class);
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 

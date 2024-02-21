@@ -15,6 +15,9 @@
         android:theme="@style/Theme.SkinLesions"
         tools:targetApi="31">
         <activity
+            android:name=".Views.PhotoAnalysisActivity"
+            android:exported="false" />
+        <activity
             android:name=".Views.LesionDetailActivity"
             android:exported="false" />
         <activity

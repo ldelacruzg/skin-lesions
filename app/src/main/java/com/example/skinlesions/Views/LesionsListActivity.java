@@ -60,7 +60,7 @@ public class LesionsListActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(Lesion lesion, int position) {
                         Bundle bundle = new Bundle();
-                        bundle.putInt("id", lesion.getId());
+                        bundle.putInt("id", position);
 
                         Intent intent = new Intent(getApplicationContext(), LesionDetailActivity.class);
                         intent.putExtras(bundle);
@@ -76,25 +76,25 @@ public class LesionsListActivity extends AppCompatActivity {
     }
 
     private void getLesionList() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://my-json-server.typicode.com/ldelacruzg/skin-lesion-api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        SkinLesionAPI service = retrofit.create(SkinLesionAPI.class);
-        Call<List<Lesion>> lesions = service.getLesions();
+        try {
+            SkinLesionAPI service = SkinLesionRetrofit.skinLesionService;
+            Call<List<Lesion>> lesions = service.getLesions();
 
-        lesions.enqueue(new Callback<List<Lesion>>() {
-            @Override
-            public void onResponse(Call<List<Lesion>> call, Response<List<Lesion>> response) {
-                List<Lesion> result = response.body();
-                setLesionList(result);
-            }
+            lesions.enqueue(new Callback<List<Lesion>>() {
+                @Override
+                public void onResponse(Call<List<Lesion>> call, Response<List<Lesion>> response) {
+                    List<Lesion> result = response.body();
+                    setLesionList(result);
+                }
 
-            @Override
-            public void onFailure(Call<List<Lesion>> call, Throwable t) {
-                System.out.println(t.getMessage());
-            }
-        });
+                @Override
+                public void onFailure(Call<List<Lesion>> call, Throwable t) {
+                    System.out.println(t.getMessage());
+                }
+            });
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

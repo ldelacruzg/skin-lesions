@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SkinLesionRetrofit {
     public static Retrofit retrofit =
             new Retrofit.Builder()
-                    .baseUrl("https://xk4w4gc1-3000.use2.devtunnels.ms/")
+                    .baseUrl("https://skin-lesion-api.onrender.com/")
                     .client(new OkHttpClient.Builder().build())
                     .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create()))
                     .build();

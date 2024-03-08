@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@+id/myAppBar">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/image_capture"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
